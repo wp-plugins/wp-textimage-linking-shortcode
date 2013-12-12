@@ -3,7 +3,7 @@
 Plugin Name: WP Text/Image Linking Shortcode
 Plugin URI: http://lookclassy.com/wordpress-plugins/linking-shortcode/
 Description: Use linking short codes to save you time and eliminate stress when restructuring your site pages & post.
-Version: 1.1
+Version: 1.0
 Text Domain: text-image-linking-shortcode
 Author: Look Classy Technologies
 Author URI: http://lookclassy.com/

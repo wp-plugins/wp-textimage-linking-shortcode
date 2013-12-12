@@ -4,7 +4,7 @@ Donate link: http://lookclassy.com/
 Tags: shortcode, linking
 Requires at least: 3.0
 Tested up to: 3.7
-Stable tag: 1.1
+Stable tag: 1.0
 License: GPLv3 or later
 License URI: http://opensource.org/licenses/GPL-3.0
 
