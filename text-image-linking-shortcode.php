@@ -3,7 +3,7 @@
 Plugin Name: WP Text/Image Linking Shortcode
 Plugin URI: http://lookclassy.com/wordpress-plugins/linking-shortcode/
 Description: Use linking short codes to save you time and eliminate stress when restructuring your site pages & post.
-Version: 1.0
+Version: 1.0.1
 Text Domain: text-image-linking-shortcode
 Author: Look Classy Technologies
 Author URI: http://lookclassy.com/
@@ -25,15 +25,16 @@ define('SHORTCODE_TEXTIMAGE', 'link');
 add_shortcode(SHORTCODE_TEXTIMAGE, 'shortcode_textimage');
 function shortcode_textimage($t){
 	extract(shortcode_atts(array(
-		'id' => null,
-		'text' => null,
-		'class' => null,
+		'id'			=> null,
+		'text'			=> null,
+		'class'			=> null,
 
-		'esc_html' => null,
-		'rel' => null,
-		'src' => null,
-		'style' => null,
-		'title' => null
+		'alt'			=> null,
+		'esc_html'		=> null,
+		'rel'			=> null,
+		'src'			=> null,
+		'style'			=> null,
+		'title'			=> null
 	),$t));
 
 	//initialize atts
@@ -41,6 +42,7 @@ function shortcode_textimage($t){
 	$text					= trim($text);
 	!empty($class)			? $class = ' class="'.esc_attr(trim($class)).'"' : $class = '';
 
+	!empty($alt)			? $alt = trim($alt) : $alt = '';
 	!empty($esc_html)		? $esc_html = trim($esc_html) : $esc_html = 'true';
 	!empty($rel)			? $rel = ' rel="'.esc_attr(trim($rel)).'"' : $rel = '';
 	!empty($src)			? $src = esc_attr(trim($src)) : $src = '';
@@ -60,9 +62,11 @@ function shortcode_textimage($t){
 		$text = esc_html($text);
 	}
 
-	if($src)
+	if($src){
+		if($alt)
+			$text = $alt;
 		return '<a href="'.$url.'"'.$class.$rel.$title.'><img src="'.$src.'"'.$style.' alt="'.$text.'" /></a>';
-	else
+	}else
 		return '<a href="'.$url.'"'.$class.$rel.$style.$title.'>'.$text.'</a>';
 }
 
@@ -103,9 +107,11 @@ function wptisc_id_lookup(){
 	");
 	if (count($posts)) {
 		$output = '<ul>';
-		foreach ($posts as $post) {
+		foreach ($posts as $post){
 			if($post->post_type != 'page')
 				$post_type = ' - <strong>('.esc_html($post->post_type) .')</strong>';
+			else
+				$post_type = '';
 			$output .= '<li class="'.$post->ID.'" title="['.SHORTCODE_TEXTIMAGE.' id=\''.$post->ID.'\' text=\'\']">'.esc_html($post->post_title).' - ID:'.esc_html($post->ID).$post_type.'</li>';
 		}
 		$output .= '</ul>';
