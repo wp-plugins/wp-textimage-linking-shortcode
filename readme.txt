@@ -15,15 +15,15 @@ Use linking short codes to save you time and eliminate stress when restructuring
 Use linking short codes to save you time and eliminate stress when restructuring your site pages & post.
 
 Available Attributes:
-	id
-	text
-	class
-	alt
-	esc_html
-	rel
-	src
-	style
-	title
+	- id
+	- text
+	- class
+	- alt
+	- esc_html
+	- rel
+	- src
+	- style
+	- title
 
 
 == Installation ==
