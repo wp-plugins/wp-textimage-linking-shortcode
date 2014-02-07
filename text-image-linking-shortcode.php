@@ -4,7 +4,7 @@ Plugin Name: LCT Text/Image Linking Shortcode
 Plugin URI: http://lookclassy.com/wordpress-plugins/linking-shortcode/
 Description: Use linking short codes to save you time and eliminate stress when restructuring your site pages & post.
 Version: 1.2
-Text Domain: text-image-linking-shortcode
+Text Domain: wp-textimage-linking-shortcode
 Author: Look Classy Technologies
 Author URI: http://lookclassy.com/
 License: GPLv3 (http://opensource.org/licenses/GPL-3.0)
