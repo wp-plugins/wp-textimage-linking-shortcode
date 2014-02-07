@@ -1,10 +1,10 @@
-=== WP Text/Image Linking Shortcode ===
+=== LCT Text/Image Linking Shortcode ===
 Contributors: ircary
 Donate link: http://lookclassy.com/
 Tags: shortcode, linking
 Requires at least: 3.0
-Tested up to: 3.8
-Stable tag: 1.1
+Tested up to: 3.8.1
+Stable tag: 1.2
 License: GPLv3 or later
 License URI: http://opensource.org/licenses/GPL-3.0
 
@@ -42,6 +42,10 @@ none
 
 
 == Changelog ==
+= 1.2 =
+	- Tested for WP 3.8.1 Compapibility
+	- Changed name to LCT Text/Image Linking Shortcode form WP Text/Image Linking Shortcode
+
 = 1.1 =
 	- Tested for WP 3.8 Compapibility
 
