@@ -3,7 +3,7 @@
 Plugin Name: LCT Text/Image Linking Shortcode
 Plugin URI: http://lookclassy.com/wordpress-plugins/linking-shortcode/
 Description: Use linking short codes to save you time and eliminate stress when restructuring your site pages & post.
-Version: 1.2
+Version: 1.2.1
 Text Domain: wp-textimage-linking-shortcode
 Author: Look Classy Technologies
 Author URI: http://lookclassy.com/
@@ -34,25 +34,27 @@ function shortcode_textimage($t){
 		'rel'			=> null,
 		'src'			=> null,
 		'style'			=> null,
-		'title'			=> null
+		'title'			=> null,
+		'anchor'			=> null
 	),$t));
 
 	//initialize atts
 	$id						= intval($id);
 	$text					= trim($text);
-	!empty($class)			? $class = ' class="'.esc_attr(trim($class)).'"' : $class = '';
+	!empty($class)			? $class = ' class="'. esc_attr(trim($class)) .'"' : $class = '';
 
 	!empty($alt)			? $alt = trim($alt) : $alt = '';
 	!empty($esc_html)		? $esc_html = trim($esc_html) : $esc_html = 'true';
-	!empty($rel)			? $rel = ' rel="'.esc_attr(trim($rel)).'"' : $rel = '';
+	!empty($rel)			? $rel = ' rel="'. esc_attr(trim($rel)) .'"' : $rel = '';
 	!empty($src)			? $src = esc_attr(trim($src)) : $src = '';
-	!empty($style)			? $style = ' style="'.esc_attr(trim($style)).'"' : $style = '';
-	!empty($title)			? $title = ' title="'.esc_attr(trim($title)).'"' : $title = '';
+	!empty($style)			? $style = ' style="'. esc_attr(trim($style)) .'"' : $style = '';
+	!empty($title)			? $title = ' title="'. esc_attr(trim($title)) .'"' : $title = '';
+	!empty($anchor)			? $anchor = '#'. trim($anchor) : $anchor = '';
 
 	if(empty($id))
 		return $text;
 
-	$url = get_permalink($id);
+	$url = get_permalink($id) . $anchor;
 
 	if(empty($text))
 		$text = get_the_title($id);
@@ -65,9 +67,9 @@ function shortcode_textimage($t){
 	if($src){
 		if($alt)
 			$text = $alt;
-		return '<a href="'.$url.'"'.$class.$rel.$title.'><img src="'.$src.'"'.$style.' alt="'.$text.'" /></a>';
+		return '<a href="'. $url .'"'. $class . $rel . $title .'><img src="'. $src .'"'. $style .' alt="'. $text .'" /></a>';
 	}else
-		return '<a href="'.$url.'"'.$class.$rel.$style.$title.'>'.$text.'</a>';
+		return '<a href="'. $url .'"'. $class . $rel . $style . $title .'>'. $text .'</a>';
 }
 
 
@@ -93,7 +95,7 @@ function wptisc_request_handler(){
 function wptisc_id_lookup(){
 	global $wpdb;
 	$title = stripslashes($_GET['post_title']);
-	$wild = '%'.$wpdb->escape($title).'%';
+	$wild = '%'. $wpdb->escape($title) .'%';
 	$posts = $wpdb->get_results("
 		SELECT *
 		FROM $wpdb->posts
@@ -109,15 +111,15 @@ function wptisc_id_lookup(){
 		$output = '<ul>';
 		foreach ($posts as $post){
 			if($post->post_type != 'page')
-				$post_type = ' - <strong>('.esc_html($post->post_type) .')</strong>';
+				$post_type = ' - <strong>('. esc_html($post->post_type) .')</strong>';
 			else
 				$post_type = '';
-			$output .= '<li class="'.$post->ID.'" title="['.SHORTCODE_TEXTIMAGE.' id=\''.$post->ID.'\' text=\'\']">'.esc_html($post->post_title).' - ID:'.esc_html($post->ID).$post_type.'</li>';
+			$output .= '<li class="'. $post->ID. '" title="['. SHORTCODE_TEXTIMAGE .' id=\''. $post->ID .'\' text=\'\']">'. esc_html($post->post_title) .' - ID:'. esc_html($post->ID) . $post_type .'</li>';
 		}
 		$output .= '</ul>';
 	}
 	else {
-		$output = '<ul><li>'.__('Sorry, no matches.', 'textimage-shortcode').'</li></ul>';
+		$output = '<ul><li>'. __('Sorry, no matches.', 'textimage-shortcode') .'</li></ul>';
 	}
 	echo $output;
 	die();
