@@ -4,7 +4,7 @@ Donate link: http://lookclassy.com/
 Tags: shortcode, linking
 Requires at least: 3.0
 Tested up to: 3.8.1
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv3 or later
 License URI: http://opensource.org/licenses/GPL-3.0
 
@@ -42,6 +42,10 @@ none
 
 
 == Changelog ==
+= 1.2.2 =
+	- Tested for WP 3.8.2 Compapibility
+	- Updated "anchor" attribute
+
 = 1.2.1 =
 	- Add an "anchor" attribute
 
