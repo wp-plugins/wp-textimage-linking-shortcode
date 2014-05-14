@@ -3,8 +3,8 @@ Contributors: ircary
 Donate link: http://lookclassy.com/
 Tags: shortcode, linking
 Requires at least: 3.0
-Tested up to: 3.9
-Stable tag: 1.2.3
+Tested up to: 3.9.1
+Stable tag: 1.2.4
 License: GPLv3 or later
 License URI: http://opensource.org/licenses/GPL-3.0
 
@@ -42,6 +42,11 @@ none
 
 
 == Changelog ==
+= 1.2.4 =
+	- Tested for WP 3.9.1 Compapibility
+	- Add an "imagetext" attribute
+	- Add an "textimage" attribute
+
 = 1.2.3 =
 	- Tested for WP 3.9 Compapibility
 

@@ -3,7 +3,7 @@
 Plugin Name: LCT Text/Image Linking Shortcode
 Plugin URI: http://lookclassy.com/wordpress-plugins/linking-shortcode/
 Description: Use linking short codes to save you time and eliminate stress when restructuring your site pages & post.
-Version: 1.2.3
+Version: 1.2.4
 Text Domain: wp-textimage-linking-shortcode
 Author: Look Classy Technologies
 Author URI: http://lookclassy.com/
@@ -35,6 +35,8 @@ function shortcode_textimage($t){
 		'src'			=> null,
 		'style'			=> null,
 		'title'			=> null,
+		'imagetext'		=> null,
+		'textimage'		=> null,
 		'anchor'			=> null
 	),$t));
 
@@ -67,10 +69,17 @@ function shortcode_textimage($t){
 		$text = esc_html($text);
 	}
 
+	if(!$alt)
+		$alt = $text;
+
 	if($src){
-		if($alt)
-			$text = $alt;
-		return '<a href="'. $url .'"'. $class . $rel . $title .'><img src="'. $src .'"'. $style .' alt="'. $text .'" /></a>';
+		if($imagetext || $textimage){
+			if($imagetext)
+				return '<a href="'. $url .'"'. $class . $rel . $title .'><img src="'. $src .'"'. $style .' alt="'. $alt .'" />'. $text .'</a>';
+			else
+				return '<a href="'. $url .'"'. $class . $rel . $title .'>'. $text .'<img src="'. $src .'"'. $style .' alt="'. $alt .'" /></a>';
+		}else
+			return '<a href="'. $url .'"'. $class . $rel . $title .'><img src="'. $src .'"'. $style .' alt="'. $alt .'" /></a>';
 	}else
 		return '<a href="'. $url .'"'. $class . $rel . $style . $title .'>'. $text .'</a>';
 }
