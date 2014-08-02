@@ -1,7 +1,7 @@
 <?php /*
 Plugin Name: LCT Text/Image Linking Shortcode
 Plugin URI: http://lookclassy.com/wordpress-plugins/linking-shortcode/
-Version: 1.3
+Version: 1.3.1
 Text Domain: wp-textimage-linking-shortcode
 Author: Look Classy Technologies
 Author URI: http://lookclassy.com/
@@ -23,6 +23,9 @@ define('SHORTCODE_TEXTIMAGE', 'link');
 
 add_shortcode(SHORTCODE_TEXTIMAGE, 'shortcode_textimage');
 function shortcode_textimage($t){
+	foreach( $t as $k=>$v ){
+		$t[$k] = do_shortcode( str_replace( array( "{", "}" ), array( "[", "]" ), $v ) );
+	}
 	extract(shortcode_atts(array(
 		'id'			=> null,
 		'text'			=> null,

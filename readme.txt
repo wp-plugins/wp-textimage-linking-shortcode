@@ -1,7 +1,7 @@
 === LCT Text/Image Linking Shortcode ===
 Contributors: ircary
 Donate link: http://lookclassy.com/
-Stable tag: 1.3
+Stable tag: 1.3.1
 Requires at least: 3.0
 Tested up to: 3.9.1
 Tags: shortcode, linking
@@ -42,6 +42,9 @@ none
 
 
 == Changelog ==
+= 1.3.1 =
+	- Added do_shortcode functionality to atts. You have to use {} instead of [] for shortcodes to work.
+
 = 1.3 =
 	- Cleaned up code
 
