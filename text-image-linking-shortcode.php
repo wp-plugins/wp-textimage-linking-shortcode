@@ -1,7 +1,7 @@
 <?php /*
 Plugin Name: LCT Text/Image Linking Shortcode
 Plugin URI: http://lookclassy.com/wordpress-plugins/linking-shortcode/
-Version: 1.3.2
+Version: 1.3.3
 Text Domain: wp-textimage-linking-shortcode
 Author: Look Classy Technologies
 Author URI: http://lookclassy.com/
@@ -20,7 +20,12 @@ GNU General Public License for more details.
 */
 
 
-if( ! class_exists( 'g_lusf' ) ){
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+$tmp = explode( '/' , rtrim( $g_labob->plugin_dir_path, '/' ) );
+$plugin = implode( '/', array_slice( $tmp, 0, -1 ) );
+if( is_plugin_active( $plugin . '/lct-useful-shortcodes-functions/lct-useful-shortcodes-functions.php' ) ) {
+
+
 	define('SHORTCODE_TEXTIMAGE', 'link');
 
 	add_shortcode(SHORTCODE_TEXTIMAGE, 'shortcode_textimage');
