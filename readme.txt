@@ -1,7 +1,7 @@
 === LCT Text/Image Linking Shortcode ===
 Contributors: ircary
 Donate link: http://lookclassy.com/
-Stable tag: 1.3.4
+Stable tag: 1.3.5
 Requires at least: 3.0
 Tested up to: 3.9.1
 Tags: shortcode, linking
@@ -13,6 +13,7 @@ Use linking short codes to save you time and eliminate stress when restructuring
 
 == Description ==
 Use linking short codes to save you time and eliminate stress when restructuring your site pages & post.
+Also Available in lct-useful-shortcodes-functions
 
 Available Attributes:
 - id
@@ -42,6 +43,10 @@ none
 
 
 == Changelog ==
+= 1.3.5 =
+	- ADDED PLUGIN PREFIX: lwtils - NOT set yet
+	- Fixed the LCT Helpful Plugin check.
+
 = 1.3.4 =
 	- Fixed the LCT Helpful Plugin check.
 

@@ -1,17 +1,18 @@
 <?php /*
 Plugin Name: LCT Text/Image Linking Shortcode
 Plugin URI: http://lookclassy.com/wordpress-plugins/linking-shortcode/
-Version: 1.3.4
+Version: 1.3.5
 Text Domain: wp-textimage-linking-shortcode
 Author: Look Classy Technologies
 Author URI: http://lookclassy.com/
 License: GPLv3 (http://opensource.org/licenses/GPL-3.0)
 Description: Use linking short codes to save you time and eliminate stress when restructuring your site pages & post.
-Copyright 2013 Look Classy Technologies  (email : info@lookclassy.com)
+Also Available in lct-useful-shortcodes-functions
+Copyright 2014 Look Classy Technologies  (email : info@lookclassy.com)
 */
 
 /*
-Copyright (C) 2013 Look Classy Technologies
+Copyright (C) 2014 Look Classy Technologies
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -20,10 +21,11 @@ GNU General Public License for more details.
 */
 
 
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-$tmp = explode( '/' , rtrim( plugin_dir_path( __FILE__ ), '/' ) );
-$plugin = implode( '/', array_slice( $tmp, 0, -1 ) );
-if( is_plugin_active( $plugin . '/lct-useful-shortcodes-functions/lct-useful-shortcodes-functions.php' ) ) {
+//PLUGIN PREFIX: lwtils - NOT set yet
+
+
+if( ! function_exists( 'is_plugin_active' ) ) { require_once( ABSPATH . '/wp-admin/includes/plugin.php' ); }
+if( ! is_plugin_active( 'lct-useful-shortcodes-functions/lct-useful-shortcodes-functions.php' ) ) {
 
 
 	define('SHORTCODE_TEXTIMAGE', 'link');
