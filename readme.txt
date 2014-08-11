@@ -1,9 +1,9 @@
 === LCT Text/Image Linking Shortcode ===
 Contributors: ircary
 Donate link: http://lookclassy.com/
-Stable tag: 1.3.5
+Stable tag: 1.4
 Requires at least: 3.0
-Tested up to: 3.9.1
+Tested up to: 3.9.2
 Tags: shortcode, linking
 License: GPLv3 or later
 License URI: http://opensource.org/licenses/GPL-3.0
@@ -43,6 +43,10 @@ none
 
 
 == Changelog ==
+= 1.4 =
+	- Tested for WP 3.9.2 Compatibility
+	- Changed the lct-useful-shortcodes-functions is_plugin_active() code
+
 = 1.3.5 =
 	- ADDED PLUGIN PREFIX: lwtils - NOT set yet
 	- Fixed the LCT Helpful Plugin check.
