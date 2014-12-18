@@ -1,7 +1,7 @@
 <?php /*
 Plugin Name: LCT Text/Image Linking Shortcode
 Plugin URI: http://lookclassy.com/wordpress-plugins/linking-shortcode/
-Version: 1.4.1
+Version: 4.1
 Text Domain: wp-textimage-linking-shortcode
 Author: Look Classy Technologies
 Author URI: http://lookclassy.com/
