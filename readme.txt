@@ -1,9 +1,9 @@
 === LCT Text/Image Linking Shortcode ===
 Contributors: ircary
 Donate link: http://lookclassy.com/
-Stable tag: 4.1
+Stable tag: 4.2
 Requires at least: 3.0
-Tested up to: 4.1
+Tested up to: 4.2
 Tags: shortcode, linking
 License: GPLv3 or later
 License URI: http://opensource.org/licenses/GPL-3.0
@@ -43,6 +43,9 @@ none
 
 
 == Changelog ==
+= 4.2 =
+	- WP 4.2 Ready
+
 = 4.1 =
 	- WP 4.1 Ready
 	- jumped version to match WP
